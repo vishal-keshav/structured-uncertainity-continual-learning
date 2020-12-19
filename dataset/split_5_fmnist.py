@@ -13,9 +13,9 @@ class dataset:
         std = (0.3081,)
         transformations = [transforms.ToTensor(),
                            transforms.Normalize(mean,std)]
-        mnist_train = datasets.MNIST(data_path, train=True, download=True,
+        mnist_train = datasets.FashionMNIST(data_path, train=True, download=True,
             transform=transforms.Compose(transformations))
-        mnist_test = datasets.MNIST(data_path, train=False, download=True,
+        mnist_test = datasets.FashionMNIST(data_path, train=False, download=True,
             transform=transforms.Compose(transformations))
         train_loader = torch.utils.data.DataLoader(mnist_train, batch_size=1,
             shuffle=False)
